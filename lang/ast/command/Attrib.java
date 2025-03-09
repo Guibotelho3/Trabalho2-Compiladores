@@ -1,28 +1,24 @@
 package lang.ast.command;
+
+import lang.ast.Node;
 import lang.ast.NodeVisitor;
-import lang.ast.command.Cmd;
 import lang.ast.expr.Exp;
-import lang.ast.expr.Var;
 
-public class Attrib extends Cmd{
-    private Var var;
-    private Exp exp;
+public class Attrib extends Node {
 
-    public Attrib(int ileft, int iright, Var var, Exp exp) {
-        super(ileft, iright);
-        this.var = var;
-        this.exp = exp;
-    }
+      private Exp lhs;
+      private Exp e;
+      
+      public Attrib(int line, int col, Exp lhs, Exp e){
+           super(line,col);
+           this.lhs = lhs;
+           this.e = e;
+      }
 
-    public Var getVar() {
-        return var;
-    }
+      public Exp getExp(){return e;}
+      public Exp getLhs(){return lhs;}
 
-    public Exp getExp() {
-        return exp;
-    }
+      public void accept(NodeVisitor v){v.visit(this);}
 
-    public void accept(NodeVisitor v) {
-        v.visit(this);
-    }
+
 }

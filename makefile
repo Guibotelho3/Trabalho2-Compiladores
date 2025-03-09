@@ -9,7 +9,9 @@ lang/parser/LangParser.java:
 	java -jar tools/java-cup-11b.jar -destdir lang/parser/ lang/parser/lang.cup
 
 lang/parser/LangLexer.java:
-	java -jar  tools/jflex.jar -nobak   -d lang/parser lang/parser/lang.flex
+	java -jar C:/Users/Usuario/Desktop/Compiladores/langFramework/Trabalho2-Compiladores/tools/jflex.jar -nobak -d C:/Users/Usuario/Desktop/Compiladores/langFramework/Trabalho2-Compiladores/lang/parser C:/Users/Usuario/Desktop/Compiladores/langFramework/Trabalho2-Compiladores/lang/parser/lang.flex
+
+
 
 cleanClasses:
 	find  -name "*.class" -delete
